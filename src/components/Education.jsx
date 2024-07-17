@@ -8,57 +8,67 @@ function Education(props) {
     };
 
     return (
-        <div className="education-info">
-            <form action="#">
-                <label htmlFor="education-school">School Name: </label>
-                <input
-                    value={education.school}
-                    type="text"
-                    id="education-school"
-                    name="education-school"
-                    required
-                >
-                </input>
+        <div>
+            <form className="education-info" action="#">
+                <h2>Education</h2>
+                <div className="education-school">
+                    <label htmlFor="education-school">School Name: </label>
+                    <input
+                        value={education.school}
+                        type="text"
+                        id="education-school"
+                        name="education-school"
+                        required
+                    >
+                    </input>
+                </div>
 
-                <label htmlFor="education-degree">Degree: </label>
-                <input
-                    value={education.degree}
-                    type="text"
-                    id="education-degree"
-                    name="education-degree"
-                    required
-                >
-                </input>
+                <div className="education-degree">
+                    <label htmlFor="education-degree">Degree: </label>
+                    <input
+                        value={education.degree}
+                        type="text"
+                        id="education-degree"
+                        name="education-degree"
+                        required
+                    >
+                    </input>
+                </div>
 
-                <label htmlFor="education-location">Location: </label>
-                <input
-                    value={education.location}
-                    type="text"
-                    id="education-location"
-                    name="education-location"
-                    required
-                >
-                </input>
+                <div className="education-location">
+                    <label htmlFor="education-location">Location: </label>
+                    <input
+                        value={education.location}
+                        type="text"
+                        id="education-location"
+                        name="education-location"
+                        required
+                    >
+                    </input>
+                </div>
 
-                <label htmlFor="education-start">Start Date: </label>
-                <input
-                    value={education.startE}
-                    type="date"
-                    id="education-start"
-                    name="education-start"
-                    required
-                >
-                </input>
+                <div className="education-date">
+                    <label htmlFor="education-start">Start Date: </label>
+                    <input
+                        value={education.startE}
+                        type="date"
+                        id="education-start"
+                        name="education-start"
+                        required
+                    >
+                    </input>
 
-                <label htmlFor="education-end">End Date: </label>
-                <input
-                    value={education.endE}
-                    type="date"
-                    id="education-end"
-                    name="education-end"
-                    required
-                >
-                </input>
+                    <label htmlFor="education-end">End Date: </label>
+                    <input
+                        value={education.endE}
+                        type="date"
+                        id="education-end"
+                        name="education-end"
+                        required
+                    >
+                    </input>
+                </div>
+
                 <button type="submit" className="education-submit">Submit</button>
             </form>
         </div>

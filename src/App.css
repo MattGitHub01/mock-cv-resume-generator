@@ -8,6 +8,9 @@
 .header {
   grid-column: 1 / 3;
   text-align: center;
+  background-color: coral;
+  border-radius: 25px;
+  margin: 1rem;
 }
 
 .forms {
@@ -22,6 +25,8 @@
   gap: .5rem;
   grid-template-rows: repeat(6, 1fr);
   border: 1px solid gray;
+  border-radius: 15px;
+  margin: 1rem;
 }
 
 .personal-info h1 {
@@ -63,13 +68,15 @@
   display: grid;
   grid-template-rows: repeat(5, 1fr);
   border: 1px solid gray;
+  border-radius: 15px;
+  margin: 1rem;
 }
 
 .professional-info h1 {
   grid-row: 1 / 2;
 }
 
-.professional-info label, input, button {
+.professional-info textarea, label, input, button {
   margin: .5rem;
 }
 
@@ -83,6 +90,8 @@
 
 .professional-description {
   grid-row: 4 / 5;
+  display: flex;
+  flex-direction: column;
 }
 
 .professional-date {
@@ -102,7 +111,44 @@
 .education-info {
   text-align: center;
   align-items: center;
+  gap: .5rem;
   display: grid;
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   border: 1px solid gray;
-  }
+  border-radius: 15px;
+  margin: 1rem;
+}
+
+.education-info h1 {
+  grid-row: 1 / 2;
+}
+
+.education-info label, input, button {
+  margin: .5rem;
+}
+
+.education-school {
+  grid-row: 2 / 3;
+}
+
+.education-degree {
+  grid-row: 3 / 4;
+}
+
+.education-location {
+  grid-row: 4 / 5;
+}
+
+.education-date {
+  grid-row: 5 / 6;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.education-submit {
+  grid-row: 7 / 8;
+  justify-self: center;
+  align-self: center;
+  width: 10rem;
+  height: 3rem;
+}

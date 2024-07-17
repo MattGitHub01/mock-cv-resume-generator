@@ -37,14 +37,16 @@ function Professional(props) {
 
                 <div className="professional-description">
                     <label htmlFor="professional-description">Job Description: </label>
-                    <input
+                    <textarea
                         value={professional.description}
                         type="textArea"
+                        rows="5"
+                        cols="30"
                         id="professional-description"
                         name="professional-description"
                         required
                     >
-                    </input>
+                    </textarea>
                 </div>
 
                 <div className="professional-date">
