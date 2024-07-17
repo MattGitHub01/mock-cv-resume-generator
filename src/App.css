@@ -1,4 +1,27 @@
+/*This is a <div></div> tag, it can be made into a flexbox or grid*/
 #root {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   margin: 0 auto;
+}
 
+.personal-info {
+  grid-column: 1 / 2;
+  border: 1px solid gray;
+  width: 200px;
+  height: 400px;
+}
+
+.professional-info {
+  grid-column: 1 / 2;
+  border: 1px solid gray;
+  width: 200px;
+  height: 400px;
+}
+
+.education-info {
+  grid-column: 1 / 2;
+  border: 1px solid gray;
+  width: 200px;
+  height: 400px;
 }
