@@ -1,53 +1,75 @@
-function Professional() {
+function Professional(props) {
+    const professional = {
+        title: props.title,
+        company: props.company,
+        description: props.description,
+        startP: props.startP,
+        endP: props.endP
+    };
+
     return (
-        <div className="professional-info">
-            <form action="#">
-                <label htmlFor="professional-title">Job Title: </label>
-                <input
-                    type="text"
-                    id="professional-title"
-                    name="professional-title"
-                    required
-                    placeholder="Web Developer"
-                >
-                </input>
+        <div>
+            <form className="professional-info" action="#">
+                <h2>Work History</h2>
+                <div className="professional-title">
+                    <label htmlFor="professional-title">Job Title: </label>
+                    <input
+                        value={professional.title}
+                        type="text"
+                        id="professional-title"
+                        name="professional-title"
+                        required
+                    >
+                    </input>
+                </div>
 
-                <label htmlFor="professional-company">Company Name: </label>
-                <input
-                    type="text"
-                    id="professional-company"
-                    name="professional-company"
-                    required
-                >
-                </input>
+                <div className="professional-company">
+                    <label htmlFor="professional-company">Company Name: </label>
+                    <input
+                        value={professional.company}
+                        type="text"
+                        id="professional-company"
+                        name="professional-company"
+                        required
+                    >
+                    </input>
+                </div>
 
-                <label htmlFor="professional-description">Job Description: </label>
-                <input
-                    type="textArea"
-                    id="professional-description"
-                    name="professional-description"
-                    required
-                >
-                </input>
+                <div className="professional-description">
+                    <label htmlFor="professional-description">Job Description: </label>
+                    <input
+                        value={professional.description}
+                        type="textArea"
+                        id="professional-description"
+                        name="professional-description"
+                        required
+                    >
+                    </input>
+                </div>
 
-                <label htmlFor="professional-start">Start Date: </label>
-                <input
-                    type="date"
-                    id="personal-start"
-                    name="personal-start"
-                    required
-                >
-                </input>
+                <div className="professional-date">
+                    <label htmlFor="professional-start">Start Date: </label>
+                    <input
+                        value={professional.startP}
+                        type="date"
+                        id="professional-start"
+                        name="professional-start"
+                        required
+                    >
+                    </input>
 
-                <label htmlFor="professional-end">End Date: </label>
-                <input
-                    type="date"
-                    id="professional-end"
-                    name="professional-end"
-                    required
-                >
-                </input>
-                <button type="submit" className="professional-submit"></button>
+                    <label htmlFor="professional-end">End Date: </label>
+                    <input
+                        value={professional.endP}
+                        type="date"
+                        id="professional-end"
+                        name="professional-end"
+                        required
+                    >
+                    </input>
+                </div>
+
+                <button type="submit" className="professional-submit">Submit</button>
             </form>
         </div>
     )

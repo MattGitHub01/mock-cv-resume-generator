@@ -1,47 +1,66 @@
-function Personal() {
+function Personal(props) {
+    const personal = {
+        name: props.name,
+        email: props.email,
+        phone: props.phone,
+        address: props.address
+    };
+
     return (
-        <div className="personal-info">
-            <form action="#">
-                <label htmlFor="personal-name">Name: </label>
-                <input
-                    type="text"
-                    id="personal-name"
-                    name="personal-name"
-                    required
-                    placeholder="John Doe"
-                >
-                </input>
+        <div>
+            <form className="personal-info" action="#">
+                <h2>Personal Information</h2>
+                <div className="personal-name">
+                    <label htmlFor="personal-name">Name: </label>
+                    <input
+                        value={personal.input}
+                        type="text"
+                        id="personal-name"
+                        name="personal-name"
+                        required
+                    >
+                    </input>
+                </div>
 
-                <label htmlFor="personal-email">E-Mail: </label>
-                <input
-                    type="email"
-                    id="personal-email"
-                    name="personal-email"
-                    required
-                    placeholder="example@example.com"
-                >
-                </input>
+                <div className="personal-email">
+                    <label htmlFor="personal-email">E-Mail: </label>
+                    <input
+                        value={personal.email}
+                        type="email"
+                        id="personal-email"
+                        name="personal-email"
+                        required
+                    >
+                    </input>
+                </div>
 
-                <label htmlFor="personal-phone">Phone: </label>
-                <input
-                    type="tel"
-                    id="personal-phone"
-                    name="personal-phone"
-                    required
-                    placeholder="555-555-5555"
-                >
-                </input>
+                <div className="personal-phone">
+                    <label htmlFor="personal-phone">Phone: </label>
+                    <input
+                        value={personal.phone}
+                        type="tel"
+                        id="personal-phone"
+                        name="personal-phone"
+                        required
+                    >
+                    </input>
+                </div>
 
-                <label htmlFor="personal-address">Address: </label>
-                <input
-                    type="text"
-                    id="personal-address"
-                    name="personal-address"
-                    required
-                    placeholder="123 Street #5 City, NY 12345"
-                >
-                </input>
-                <button type="submit" className="personal-submit">Submit</button>
+                <div className="personal-address">
+                    <label htmlFor="personal-address">Address: </label>
+                    <input
+                        value={personal.address}
+                        type="text"
+                        id="personal-address"
+                        name="personal-address"
+                        required
+                    >
+                    </input>
+                </div>
+
+                <button 
+                type="submit" 
+                className="personal-submit">Submit</button>
             </form>
         </div>
     )

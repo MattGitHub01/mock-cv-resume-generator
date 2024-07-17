@@ -1,9 +1,18 @@
-function Education() {
+function Education(props) {
+    const education = {
+        school: props.school,
+        degree: props.degree,
+        location: props.location,
+        startE: props.startE,
+        endE: props.endE
+    };
+
     return (
         <div className="education-info">
             <form action="#">
                 <label htmlFor="education-school">School Name: </label>
                 <input
+                    value={education.school}
                     type="text"
                     id="education-school"
                     name="education-school"
@@ -13,6 +22,7 @@ function Education() {
 
                 <label htmlFor="education-degree">Degree: </label>
                 <input
+                    value={education.degree}
                     type="text"
                     id="education-degree"
                     name="education-degree"
@@ -22,6 +32,7 @@ function Education() {
 
                 <label htmlFor="education-location">Location: </label>
                 <input
+                    value={education.location}
                     type="text"
                     id="education-location"
                     name="education-location"
@@ -31,6 +42,7 @@ function Education() {
 
                 <label htmlFor="education-start">Start Date: </label>
                 <input
+                    value={education.startE}
                     type="date"
                     id="education-start"
                     name="education-start"
@@ -40,6 +52,7 @@ function Education() {
 
                 <label htmlFor="education-end">End Date: </label>
                 <input
+                    value={education.endE}
                     type="date"
                     id="education-end"
                     name="education-end"
