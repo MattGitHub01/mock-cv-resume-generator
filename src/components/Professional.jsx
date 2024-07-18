@@ -73,7 +73,7 @@ function Professional() {
                 <button type="submit" className="professional-submit">Submit</button>
                 
             </form>
-            <p key={profData}>Name: {profData.professionalTitle}</p>
+            <p className="right-side" key={profData}>Name: {profData.professionalTitle}</p>
         </div> 
     )
 }

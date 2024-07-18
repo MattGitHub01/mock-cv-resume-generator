@@ -19,6 +19,7 @@
 }
 
 .personal-info {
+  grid-column: 1 / 2;
   text-align: center;
   align-items: center;
   display: grid;

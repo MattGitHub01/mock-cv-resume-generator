@@ -62,8 +62,8 @@ function Personal() {
                 type="submit" 
                 className="personal-submit">Submit</button>
             </form>
-        {/* Below: How to re-render based on user input form data */}
-        <p key={persData}>Name: {persData.personalName}</p>
+            {/* Below: How to re-render based on user input form data */}
+            <p className="right-side" key={persData}>Name: {persData.personalName}</p>
         </div>
     )
 }

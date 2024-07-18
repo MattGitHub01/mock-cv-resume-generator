@@ -1,78 +1,73 @@
-function Education(props) {
-    const education = {
-        school: props.school,
-        degree: props.degree,
-        location: props.location,
-        startE: props.startE,
-        endE: props.endE
-    };
+import { useState } from 'react'
+
+export default function Education({ elRef }) {
+    const [eduData, setEduData] = useState('test');
+
+    const eduSubmit = (e) => {
+        e.preventDefault();
+        var data = new FormData(e.target);
+        let eduObject = Object.fromEntries(data.entries());
+        setEduData(eduObject);
+      }
 
     return (
         <div>
-            <form className="education-info" action="#">
+            <form className="education-info" action="#" onSubmit={eduSubmit}>
                 <h2>Education</h2>
                 <div className="education-school">
-                    <label htmlFor="education-school">School Name: </label>
+                    <label htmlFor="educationSchool">School Name: </label>
                     <input
-                        value={education.school}
+                        ref={elRef}
                         type="text"
-                        id="education-school"
-                        name="education-school"
+                        id="educationSchool"
+                        name="educationSchool"
                         required
-                    >
-                    </input>
+                     />
                 </div>
 
                 <div className="education-degree">
-                    <label htmlFor="education-degree">Degree: </label>
+                    <label htmlFor="educationDegree">Degree: </label>
                     <input
-                        value={education.degree}
                         type="text"
-                        id="education-degree"
-                        name="education-degree"
+                        id="educationDegree"
+                        name="educationDegree"
                         required
-                    >
-                    </input>
+                    />
                 </div>
 
-                <div className="education-location">
-                    <label htmlFor="education-location">Location: </label>
+                <div className="educationLocation">
+                    <label htmlFor="educationLocation">Location: </label>
                     <input
-                        value={education.location}
                         type="text"
-                        id="education-location"
-                        name="education-location"
+                        id="educationLocation"
+                        name="educationLocation"
                         required
-                    >
-                    </input>
+                    />
+
                 </div>
 
                 <div className="education-date">
-                    <label htmlFor="education-start">Start Date: </label>
+                    <label htmlFor="educationStart">Start Date: </label>
                     <input
-                        value={education.startE}
                         type="date"
-                        id="education-start"
-                        name="education-start"
+                        id="educationStart"
+                        name="educationStart"
                         required
-                    >
-                    </input>
+                        />
 
-                    <label htmlFor="education-end">End Date: </label>
+                    <label htmlFor="educationEnd">End Date: </label>
                     <input
-                        value={education.endE}
                         type="date"
-                        id="education-end"
-                        name="education-end"
+                        id="educationEnd"
+                        name="educationEnd"
                         required
-                    >
-                    </input>
+                        />
                 </div>
 
                 <button type="submit" className="education-submit">Submit</button>
+                <p className="right-side" key={eduData}>Name: {eduData.educationSchool}</p>
             </form>
         </div>
     )
 }
 
-export default Education
