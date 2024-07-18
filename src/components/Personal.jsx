@@ -1,19 +1,19 @@
 function Personal(props) {
-    const personal = {
-        name: props.name,
-        email: props.email,
-        phone: props.phone,
-        address: props.address
-    };
+    const formSubmit = (event) => {
+        event.preventDefault();
+        var data = new FormData(event.target);
+        let formObject = Object.fromEntries(data.entries());
+        console.log(formObject);
+      }
 
     return (
         <div>
-            <form className="personal-info" action="#">
+            <form className="personal-info" action="#" onSubmit={formSubmit}>
                 <h2>Personal Information</h2>
                 <div className="personal-name">
                     <label htmlFor="personal-name">Name: </label>
                     <input
-                        value={personal.input}
+                        value={props.input}
                         type="text"
                         id="personal-name"
                         name="personal-name"
@@ -25,7 +25,7 @@ function Personal(props) {
                 <div className="personal-email">
                     <label htmlFor="personal-email">E-Mail: </label>
                     <input
-                        value={personal.email}
+                        value={props.email}
                         type="email"
                         id="personal-email"
                         name="personal-email"
@@ -37,7 +37,7 @@ function Personal(props) {
                 <div className="personal-phone">
                     <label htmlFor="personal-phone">Phone: </label>
                     <input
-                        value={personal.phone}
+                        value={props.phone}
                         type="tel"
                         id="personal-phone"
                         name="personal-phone"
@@ -49,7 +49,7 @@ function Personal(props) {
                 <div className="personal-address">
                     <label htmlFor="personal-address">Address: </label>
                     <input
-                        value={personal.address}
+                        value={props.address}
                         type="text"
                         id="personal-address"
                         name="personal-address"

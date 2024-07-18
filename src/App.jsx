@@ -5,6 +5,7 @@ import './App.css'
 
 function App() {
   //const [count, setCount] = useState(0) THIS IS HOW TO MODIFY STATE WITH RENDER
+  const usr = 'test';
 
   return (
     <>
