@@ -1,10 +1,15 @@
-//import PersonalContent from './PersonalContent.jsx'
+import Personal from './Personal.jsx'
+import Professional from './Professional.jsx'
+import Education from './Education.jsx'
+import Main from './Main.jsx'
 
-function Content(formObject) {
-    console.table(formObject)
+function Content() {
     return (
-        <div>
-            <h1 key={formObject.name}>{formObject.name}</h1>
+        <div className="content">
+            <Personal />
+            <Professional />
+            <Education />
+            <Main />
         </div>
     )
 }

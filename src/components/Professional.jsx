@@ -1,79 +1,80 @@
-function Professional(props) {
-    const professional = {
-        title: props.title,
-        company: props.company,
-        description: props.description,
-        startP: props.startP,
-        endP: props.endP
-    };
+import { useState } from 'react'
+
+function Professional() {
+
+    const [profData, setProfData] = useState('test');
+
+    const profSubmit = (e) => {
+        e.preventDefault();
+        var data = new FormData(e.target);
+        let profObject = Object.fromEntries(data.entries());
+        setProfData(profObject);
+      }
 
     return (
         <div>
-            <form className="professional-info" action="#">
+            <form className="professional-info" action="#" onSubmit={profSubmit}>
                 <h2>Work History</h2>
                 <div className="professional-title">
-                    <label htmlFor="professional-title">Job Title: </label>
+                    <label htmlFor="professionalTitle">Job Title: </label>
                     <input
-                        value={professional.title}
                         type="text"
-                        id="professional-title"
-                        name="professional-title"
+                        id="professionalTitle"
+                        name="professionalTitle"
                         required
                     >
                     </input>
                 </div>
 
                 <div className="professional-company">
-                    <label htmlFor="professional-company">Company Name: </label>
+                    <label htmlFor="professionalCompany">Company Name: </label>
                     <input
-                        value={professional.company}
                         type="text"
-                        id="professional-company"
-                        name="professional-company"
+                        id="professionalCompany"
+                        name="professionalCompany"
                         required
                     >
                     </input>
                 </div>
 
                 <div className="professional-description">
-                    <label htmlFor="professional-description">Job Description: </label>
+                    <label htmlFor="professionalDescription">Job Description: </label>
                     <textarea
-                        value={professional.description}
                         type="textArea"
                         rows="5"
                         cols="30"
-                        id="professional-description"
-                        name="professional-description"
+                        id="professionalDescription"
+                        name="professionalDescription"
                         required
                     >
                     </textarea>
                 </div>
 
                 <div className="professional-date">
-                    <label htmlFor="professional-start">Start Date: </label>
+                    <label htmlFor="professionalStart">Start Date: </label>
                     <input
-                        value={professional.startP}
                         type="date"
-                        id="professional-start"
-                        name="professional-start"
+                        id="professionalEnd"
+                        name="professionalEnd"
                         required
                     >
                     </input>
 
-                    <label htmlFor="professional-end">End Date: </label>
+                    <label htmlFor="professionalEnd">End Date: </label>
                     <input
-                        value={professional.endP}
                         type="date"
-                        id="professional-end"
-                        name="professional-end"
+                        id="professionalEnd"
+                        name="professionalEnd"
                         required
                     >
                     </input>
                 </div>
 
                 <button type="submit" className="professional-submit">Submit</button>
+                
             </form>
-        </div>
+            <p key={profData}>Name: {profData.professionalTitle}</p>
+        </div> 
     )
 }
 
