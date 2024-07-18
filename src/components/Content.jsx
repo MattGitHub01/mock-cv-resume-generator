@@ -1,10 +1,11 @@
-import UserContent from './UserContent.jsx'
+//import PersonalContent from './PersonalContent.jsx'
 
-function Content(props) {
+function Content(formObject) {
+    console.table(formObject)
     return (
-        <>
-            <UserContent key={props.usr} usr={props.usr} />
-        </>
+        <div>
+            <h1 key={formObject.name}>{formObject.name}</h1>
+        </div>
     )
 }
 
