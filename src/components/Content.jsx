@@ -224,8 +224,19 @@ function Content() {
                     <span key={profData}>{profData.endDateProf}</span>
                 </div>
             </div>
-            <div>
-                <h3>School: <h3 key={eduData}>{eduData.school}</h3></h3>
+            
+            <div className="education-content">
+                <h3 className="ed-school" key={eduData}>{eduData.school}</h3>
+                <h3 className="ed-degree" key={eduData}>{eduData.degree}</h3>
+                <span className="ed-location" key={eduData}>{eduData.location}</span>
+                <div className="ed-start">
+                    <span>Start: </span>
+                    <span key={eduData}>{eduData.startDateEdu}</span>
+                </div>
+                <div className="ed-end">
+                    <span>End: </span>
+                    <span key={eduData}>{eduData.endDateEdu}</span>
+                </div>
             </div>
         </div>
     </>
