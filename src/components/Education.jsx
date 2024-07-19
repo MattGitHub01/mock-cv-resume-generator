@@ -1,13 +1,13 @@
 import { useState } from 'react'
 
-export default function Education({ elRef }) {
-    const [eduData, setEduData] = useState('test');
+export default function Education() {
+    const [eduData, setEduData] = useState('');
 
     const eduSubmit = (e) => {
         e.preventDefault();
-        var data = new FormData(e.target);
+        let data = new FormData(e.target);
         let eduObject = Object.fromEntries(data.entries());
-        setEduData(eduObject);
+        setEduData(eduData, data);
       }
 
     return (
@@ -15,58 +15,59 @@ export default function Education({ elRef }) {
             <form className="education-info" action="#" onSubmit={eduSubmit}>
                 <h2>Education</h2>
                 <div className="education-school">
-                    <label htmlFor="educationSchool">School Name: </label>
+                    <label htmlFor="school">School Name: </label>
                     <input
-                        ref={elRef}
                         type="text"
-                        id="educationSchool"
-                        name="educationSchool"
+                        id="school"
+                        name="school"
                         required
                      />
                 </div>
 
                 <div className="education-degree">
-                    <label htmlFor="educationDegree">Degree: </label>
+                    <label htmlFor="degree">Degree: </label>
                     <input
                         type="text"
-                        id="educationDegree"
-                        name="educationDegree"
+                        id="degree"
+                        name="degree"
                         required
                     />
                 </div>
 
                 <div className="educationLocation">
-                    <label htmlFor="educationLocation">Location: </label>
+                    <label htmlFor="location">Location: </label>
                     <input
                         type="text"
-                        id="educationLocation"
-                        name="educationLocation"
+                        id="location"
+                        name="location"
                         required
                     />
 
                 </div>
 
                 <div className="education-date">
-                    <label htmlFor="educationStart">Start Date: </label>
+                    <label htmlFor="dateStart">Start Date: </label>
                     <input
                         type="date"
-                        id="educationStart"
-                        name="educationStart"
+                        id="dateStart"
+                        name="dateStart"
                         required
                         />
 
-                    <label htmlFor="educationEnd">End Date: </label>
+                    <label htmlFor="dateEnd">End Date: </label>
                     <input
                         type="date"
-                        id="educationEnd"
-                        name="educationEnd"
+                        id="dateEnd"
+                        name="dateEnd"
                         required
                         />
                 </div>
 
                 <button type="submit" className="education-submit">Submit</button>
-                <p className="right-side" key={eduData}>Name: {eduData.educationSchool}</p>
             </form>
+            <div className='main'>
+                <h3>School: {eduData.school}</h3>
+            </div>
         </div>
     )
 }

@@ -14,7 +14,7 @@ function Personal() {
         <div>
             <form className="personal-info" action="#" onSubmit={persSubmit}>
                 <h2>Personal Information</h2>
-                <div className="persona-name">
+                <div className="personal-name">
                     <label htmlFor="personalName">Name: </label>
                     <input
                         type="text"
@@ -62,8 +62,10 @@ function Personal() {
                 type="submit" 
                 className="personal-submit">Submit</button>
             </form>
-            {/* Below: How to re-render based on user input form data */}
-            <p className="right-side" key={persData}>Name: {persData.personalName}</p>
+            {/* 
+                Below: How to re-render based on user input form data 
+                <p className="right-side" key={persData}>Name: {persData.personalName}</p>
+            */}
         </div>
     )
 }
