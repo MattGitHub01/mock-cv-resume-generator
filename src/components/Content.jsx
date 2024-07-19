@@ -205,9 +205,28 @@ function Content() {
             </form>
         </div>
         <div className="cv-wrapper">
-            <h1 key={persData}>Name: {persData.name}</h1>
-            <h2 key={profData}>Job Title: {profData.title}</h2>
-            <h3 key={eduData}>School: {eduData.school}</h3>
+            <div className="personal-content">
+                <h3 className="pe-name" key={persData}>{persData.name}</h3>
+                <span className="pe-email" key={persData}>{persData.email}</span>
+                <span className="pe-phone" key={persData}>{persData.phone}</span>
+                <span className="pe-address" key={persData}>{persData.address}</span>
+            </div>
+            <div className="professional-content">
+                <h3 className="pr-title" key={profData}>{profData.title}</h3>
+                <h3 className="pr-company" key={profData}>{profData.company}</h3>
+                <span className="pr-description" key={profData}>{profData.description}</span>
+                <div className="pr-start">
+                    <span>Start: </span>
+                    <span key={profData}>{profData.startDateProf}</span>
+                </div>
+                <div className="pr-end">
+                    <span>End: </span>
+                    <span key={profData}>{profData.endDateProf}</span>
+                </div>
+            </div>
+            <div>
+                <h3>School: <h3 key={eduData}>{eduData.school}</h3></h3>
+            </div>
         </div>
     </>
     )
