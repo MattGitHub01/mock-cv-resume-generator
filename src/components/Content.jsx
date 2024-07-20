@@ -1,25 +1,21 @@
-// import Personal from './Personal.jsx'
-// import Professional from './Professional.jsx'
-// import Education from './Education.jsx'
+import Personal from './Personal.jsx'
+import Professional from './Professional.jsx'
+import Education from './Education.jsx'
 import { useState } from "react";
 
 function Content() {
-    const [persData, setPersData] = useState('test');
-    const [profData, setProfData] = useState('test');
+    const [persData, setPersData] = useState('');
+    const [profData, setProfData] = useState('');
     const [eduData, setEduData] = useState('');
 
     const persSubmit = (e) => {
-        e.preventDefault();
-        let data = new FormData(e.target);
-        let persObject = Object.fromEntries(data.entries());
-        setPersData(persObject);
+        setPersData(e.target.value);
+        console.log(persData);
     }
 
     const profSubmit = (e) => {
-        e.preventDefault();
-        let data = new FormData(e.target);
-        let profObject = Object.fromEntries(data.entries());
-        setProfData(profObject);
+        setProfData(e.target.value);
+        console.table(profData);
     }
 
     const eduSubmit = (e) => {
@@ -27,6 +23,14 @@ function Content() {
         let data = new FormData(e.target);
         let eduObject = Object.fromEntries(data.entries());
         setEduData(eduObject);
+        console.log(eduData);
+      }
+
+
+      /*
+    const eduSubmit = (e) => {
+        setEduData(e.target.value);
+        console.table(eduData);
     }
 
 
@@ -146,7 +150,7 @@ function Content() {
                     <button type="submit" className="professional-submit">Submit</button>
                     
                 </form>
-            {/* <p className="right-side" key={profData}>Name: {profData.professionalTitle}</p>*/}
+            {/* <p className="right-side" key={profData}>Name: {profData.professionalTitle}</p>
             </div> 
 
             <div className="education-wrapper">
@@ -240,16 +244,17 @@ function Content() {
             </div>
         </div>
     </>
-    )
-
-
-    /*return (
-        <div className="content">
-            <Personal />
-            <Professional />
-            <Education />
-        </div>
     )*/
+
+
+    return (
+        <div className="content">
+            <button onClick={() => console.table(eduData)}>Test Btn</button>
+            <Personal onChange={persSubmit} value={persData} />
+            <Professional onChange={profSubmit} value={profData} />
+            <Education onChange={eduSubmit} value={eduData} />
+        </div>
+    )
 }
 
 export default Content

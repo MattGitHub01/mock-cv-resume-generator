@@ -1,19 +1,8 @@
-import { useState } from 'react'
-
-function Professional() {
-
-    const [profData, setProfData] = useState('test');
-
-    const profSubmit = (e) => {
-        e.preventDefault();
-        var data = new FormData(e.target);
-        let profObject = Object.fromEntries(data.entries());
-        setProfData(profObject);
-      }
+function Professional({ onChange }) {
 
     return (
         <div>
-            <form className="professional-info" action="#" onSubmit={profSubmit}>
+            <form className="professional-info" action="#" onChange={onChange}>
                 <h2>Work History</h2>
                 <div className="professional-title">
                     <label htmlFor="professionalTitle">Job Title: </label>
@@ -69,11 +58,8 @@ function Professional() {
                     >
                     </input>
                 </div>
-
                 <button type="submit" className="professional-submit">Submit</button>
-                
             </form>
-           {/* <p className="right-side" key={profData}>Name: {profData.professionalTitle}</p>*/}
         </div> 
     )
 }

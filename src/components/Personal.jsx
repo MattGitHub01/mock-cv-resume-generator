@@ -1,18 +1,8 @@
-import { useState } from 'react'
-
-function Personal() {
-    const [persData, setPersData] = useState('test');
-
-    const persSubmit = (e) => {
-        e.preventDefault();
-        var data = new FormData(e.target);
-        let persObject = Object.fromEntries(data.entries());
-        setPersData(persObject);
-      }
+function Personal({ onChange }) {
 
     return (
         <div>
-            <form className="personal-info" action="#" onSubmit={persSubmit}>
+            <form className="personal-info" action="#" onChange={onChange}>
                 <h2>Personal Information</h2>
                 <div className="personal-name">
                     <label htmlFor="personalName">Name: </label>
