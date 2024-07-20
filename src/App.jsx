@@ -4,9 +4,7 @@ import Content from './components/Content.jsx'
 import './App.css'
 
 function App() {
-  //const [count, setCount] = useState(0) THIS IS HOW TO MODIFY STATE WITH RENDER
-
-
+  
   return (
     <>
       <Header />
