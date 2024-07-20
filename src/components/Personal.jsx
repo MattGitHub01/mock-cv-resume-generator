@@ -1,48 +1,48 @@
-function Personal({ onChange }) {
+function Personal({ onSubmit }) {
 
     return (
         <div>
-            <form className="personal-info" action="#" onChange={onChange}>
+            <form className="personal-info" action="#" onSubmit={onSubmit}>
                 <h2>Personal Information</h2>
                 <div className="personal-name">
-                    <label htmlFor="personalName">Name: </label>
+                    <label htmlFor="name">Name: </label>
                     <input
                         type="text"
-                        id="personalName"
-                        name="personalName"
+                        id="name"
+                        name="name"
                         required
                     >
                     </input>
                 </div>
 
                 <div className="personal-email">
-                    <label htmlFor="personalEmail">E-Mail: </label>
+                    <label htmlFor="email">E-Mail: </label>
                     <input
                         type="email"
-                        id="personalEmail"
-                        name="personalEmail"
+                        id="email"
+                        name="email"
                         required
                     >
                     </input>
                 </div>
 
                 <div className="personal-phone">
-                    <label htmlFor="personalPhone">Phone: </label>
+                    <label htmlFor="phone">Phone: </label>
                     <input
                         type="tel"
-                        id="personalPhone"
-                        name="personalPhone"
+                        id="phone"
+                        name="phone"
                         required
                     >
                     </input>
                 </div>
 
                 <div className="personal-address">
-                    <label htmlFor="personalAddress">Address: </label>
+                    <label htmlFor="address">Address: </label>
                     <input
                         type="text"
-                        id="personalAddress"
-                        name="personalAddress"
+                        id="address"
+                        name="address"
                         required
                     >
                     </input>
@@ -52,10 +52,6 @@ function Personal({ onChange }) {
                 type="submit" 
                 className="personal-submit">Submit</button>
             </form>
-            {/* 
-                Below: How to re-render based on user input form data 
-                <p className="right-side" key={persData}>Name: {persData.personalName}</p>
-            */}
         </div>
     )
 }

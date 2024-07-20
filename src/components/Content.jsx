@@ -1,6 +1,9 @@
 import Personal from './Personal.jsx'
+import PersonalCv from './PersonalCv.jsx'
 import Professional from './Professional.jsx'
+import ProfessionalCv from './ProfessionalCv.jsx'
 import Education from './Education.jsx'
+import EducationCv from './EducationCv.jsx'
 import { useState } from "react";
 
 function Content() {
@@ -9,21 +12,24 @@ function Content() {
     const [eduData, setEduData] = useState('');
 
     const persSubmit = (e) => {
-        setPersData(e.target.value);
-        console.log(persData);
-    }
+        e.preventDefault();
+        let peData = new FormData(e.target);
+        let persObject = Object.fromEntries(peData.entries());
+        setPersData(persObject);
+      }
 
     const profSubmit = (e) => {
-        setProfData(e.target.value);
-        console.table(profData);
-    }
+        e.preventDefault();
+        let prData = new FormData(e.target);
+        let profObject = Object.fromEntries(prData.entries());
+        setProfData(profObject);
+      }
 
     const eduSubmit = (e) => {
         e.preventDefault();
-        let data = new FormData(e.target);
-        let eduObject = Object.fromEntries(data.entries());
+        let eData = new FormData(e.target);
+        let eduObject = Object.fromEntries(eData.entries());
         setEduData(eduObject);
-        console.log(eduData);
       }
 
 
@@ -248,12 +254,18 @@ function Content() {
 
 
     return (
-        <div className="content">
-            <button onClick={() => console.table(eduData)}>Test Btn</button>
-            <Personal onChange={persSubmit} value={persData} />
-            <Professional onChange={profSubmit} value={profData} />
-            <Education onChange={eduSubmit} value={eduData} />
-        </div>
+        <>
+            <div className="content">
+                <Personal onSubmit={persSubmit} value={persData} />
+                <Professional onSubmit={profSubmit} value={profData} />
+                <Education onSubmit={eduSubmit} value={eduData} />
+            </div>
+            <div className="cv-wrapper">
+                <PersonalCv persData={persData} />
+                <ProfessionalCv profData={profData} />
+                <EducationCv eduData={eduData} />
+            </div>
+        </>
     )
 }
 

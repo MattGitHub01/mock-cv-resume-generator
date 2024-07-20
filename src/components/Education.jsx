@@ -1,8 +1,8 @@
-export default function Education({ onChange }) {
+export default function Education({ onSubmit }) {
 
     return (
         <div>
-            <form className="education-info" action="#" onSubmit={onChange}>
+            <form className="education-info" action="#" onSubmit={onSubmit}>
                 <h2>Education</h2>
                 <div className="education-school">
                     <label htmlFor="school">School Name: </label>
@@ -36,19 +36,19 @@ export default function Education({ onChange }) {
                 </div>
 
                 <div className="education-date">
-                    <label htmlFor="dateStart">Start Date: </label>
+                    <label htmlFor="eStart">Start Date: </label>
                     <input
                         type="date"
-                        id="dateStart"
-                        name="dateStart"
+                        id="eStart"
+                        name="eStart"
                         required
                         />
 
-                    <label htmlFor="dateEnd">End Date: </label>
+                    <label htmlFor="eEnd">End Date: </label>
                     <input
                         type="date"
-                        id="dateEnd"
-                        name="dateEnd"
+                        id="eEnd"
+                        name="eEnd"
                         required
                         />
                 </div>
