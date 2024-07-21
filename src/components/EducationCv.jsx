@@ -6,12 +6,12 @@ function EducationCv ({ eduData }) {
             <h3 className="ed-degree" key={eduData}>{eduData.degree}</h3>
             <span className="ed-location" key={eduData}>{eduData.location}</span>
             <div className="ed-start">
-                <span>Start: </span>
-                <span key={eduData}>{eduData.startDateEdu}</span>
+                <span>ClrTstStart: </span>
+                <span key={eduData}>{eduData.eStart}</span>
             </div>
             <div className="ed-end">
                 <span>End: </span>
-                <span key={eduData}>{eduData.endDateEdu}</span>
+                <span key={eduData}>{eduData.eEnd}</span>
             </div>
         </div>
     )

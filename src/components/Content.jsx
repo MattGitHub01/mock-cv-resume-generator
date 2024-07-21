@@ -35,9 +35,9 @@ function Content() {
     return (
         <>
             <div className="content">
-                <Personal onSubmit={persSubmit} value={persData} />
-                <Professional onSubmit={profSubmit} value={profData} />
-                <Education onSubmit={eduSubmit} value={eduData} />
+                <Personal onSubmit={persSubmit} />
+                <Professional onSubmit={profSubmit} />
+                <Education onSubmit={eduSubmit} />
             </div>
             <div className="cv-wrapper">
                 <PersonalCv persData={persData} />

@@ -7,11 +7,11 @@ function ProfessionalCv ({ profData }) {
             <span className="pr-description" key={profData}>{profData.description}</span>
             <div className="pr-start">
                 <span>Start: </span>
-                <span key={profData}>{profData.prStart}</span>
+                <span key={profData}>{profData.pStart}</span>
             </div>
             <div className="pr-end">
                 <span>End: </span>
-                <span key={profData}>{profData.prEnd}</span>
+                <span key={profData}>{profData.pEnd}</span>
             </div>
         </div>
     )
