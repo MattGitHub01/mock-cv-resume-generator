@@ -25,14 +25,6 @@
   margin: 1rem;
 }
 
-.dateInvis {
-  color: white;
-}
-
-.dateInvis {
-  color: black;
-}
-
 .personal-content {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
